@@ -34,6 +34,3 @@ export const getResources = () => [
     tag     : "مجاني · 30 دقيقة",
   },
 ];
-
-
-
