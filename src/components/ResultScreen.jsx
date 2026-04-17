@@ -106,14 +106,14 @@ export default function ResultScreen({ user, score, onRestart }) {
 
             {/* Course Poster */}
             <div
-              className={`aspect-[4/5] w-full rounded-2xl relative overflow-hidden shadow-md group`}
+              className={`aspect-[9/16] w-full max-w-[300px] mx-auto rounded-2xl relative overflow-hidden shadow-md group`}
             >
               {result.imgSrc ? (
                 <ShimmerImage
                   src={result.imgSrc}
                   alt={result.courseAr}
                   className="w-full h-full absolute inset-0"
-                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                  imgClassName="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               ) : (
                 <div className={`w-full h-full bg-gradient-to-br ${result.gradient} p-8 text-white flex flex-col items-center justify-center relative`}>

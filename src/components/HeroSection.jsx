@@ -1,5 +1,6 @@
 import { GraduationCap, Sparkles, Target } from "lucide-react";
 import { WaIcon, waLink } from "../utils/helpers";
+import Ballpit from "./Ballpit";
 
 const STATS = [
   { num: "+200", label: "طالب وطالبة" },
@@ -15,11 +16,18 @@ const STATS = [
  */
 export default function HeroSection({ onStartTest }) {
   return (
-    <section className="hero-section" id="hero">
-      {/* Ambient orbs */}
-      <div className="orb orb-1" />
-      <div className="orb orb-2" />
-      <div className="orb orb-3" />
+    <section className="hero-section relative overflow-hidden" id="hero">
+      {/* 3D Ballpit Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-multiply">
+        <Ballpit
+          count={50}
+          gravity={0.1}
+          friction={0.96}
+          wallBounce={0.89}
+          followCursor={false}
+          colors={["#10B981", "#84CC16", "#ffffff"]}
+        />
+      </div>
 
       <div className="relative z-10 max-w-3xl mx-auto">
         {/* Top badge */}
@@ -34,14 +42,19 @@ export default function HeroSection({ onStartTest }) {
           className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-4 animate-slide-up"
           style={{ animationDelay: "0.1s" }}
         >
-          تعلم الإنجليزية{" "}
-          <span className="gradient-text">بفطرة الطفل</span>
-          <br />
-          وذكاء المهندس
-        </h1>
+          تعلم {" "}
+          <span className="gradient-text">الإنجليزية </span>
 
+          كما تعلمت  {" "}
+          <span className="gradient-text">لغتك الأم  </span>
+          <br />
+        </h1>
+        <br />
         <p className="text-gray-500 text-lg md:text-xl leading-relaxed mb-3 animate-slide-up-delay">
-          تعلم الإنجليزية كما تعلمت لغتك الأم — من خلال الاكتساب الطبيعي، لا الحفظ والتكرار
+       من خلال الاكتساب الطبيعي، لا الحفظ والتكرار
+        </p>
+        <p className="text-gray-500 text-lg md:text-xl leading-relaxed mb-3 animate-slide-up-delay">
+      دروس مباشرة عبر زوم 
         </p>
 
         <br />
