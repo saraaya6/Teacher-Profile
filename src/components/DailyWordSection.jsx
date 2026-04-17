@@ -1,14 +1,14 @@
 import { memo } from "react";
 import { BookOpen, Heart, Volume2 } from "lucide-react";
 import { getDailyWord } from "../data/quizData";
-import { useSpeech }    from "../hooks/useSpeech";
+import { useSpeech } from "../hooks/useSpeech";
 
 /**
  * Displays today's rotating vocabulary card with a text-to-speech button.
  */
 export default memo(function DailyWordSection() {
-  const word   = getDailyWord();
-  const today  = new Date().toLocaleDateString("ar-YE", {
+  const word = getDailyWord();
+  const today = new Date().toLocaleDateString("ar-YE", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
   const { speak } = useSpeech();
@@ -23,7 +23,7 @@ export default memo(function DailyWordSection() {
             كلمة اليوم
           </div>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
-              <span className="gradient-text">أثري مفرداتك يوميا</span>
+            <span className="gradient-text">اثري مفرداتك يوميا</span>
           </h2>
           <br />
           <p className="text-gray-400 text-sm">{today}</p>

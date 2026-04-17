@@ -60,6 +60,7 @@ export default function ResourcesSection() {
                   href={r.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download={r.action === "download" ? "Self_Introduction_Questions.pdf" : undefined}
                   id={`${r.id}-btn`}
                   className={`w-full btn-teal bg-gradient-to-r ${r.color} py-3 text-sm`}
                 >

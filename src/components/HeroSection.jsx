@@ -39,7 +39,7 @@ export default function HeroSection({ onStartTest }) {
 
         {/* Headline */}
         <h1
-          className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-4 animate-slide-up"
+          className="text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-4 animate-slide-up"
           style={{ animationDelay: "0.1s" }}
         >
           تعلم {" "}
