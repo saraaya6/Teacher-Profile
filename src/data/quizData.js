@@ -2,342 +2,282 @@ import img1 from "../assets/courses/1.jpg";
 import img2 from "../assets/courses/2.jpg";
 import img3 from "../assets/courses/3.jpg";
 import img4 from "../assets/courses/4.jpg";
-
 // ═══════════════════════════════════════════════════════════════════════════
-//  QUESTIONS  —  constant object keyed by audience
-//  Keys: "kids" (age ≤ 12) | "adults" (age > 12)
-//  Curriculum:
-//    kids   → تأسيس الأطفال + محادثة الأطفال
-//    adults → تأسيس المحادثة + المحادثة المكثفة + AI / Research
+//  QUESTIONS  —  تحديث م. سارة اليافعي
+//  الأطفال (عربي) | الكبار (إنجليزي مطابق للمنهج)
 // ═══════════════════════════════════════════════════════════════════════════
 export const QUESTIONS = Object.freeze({
 
   kids: [
-    // ── Letters & Phonics ──────────────────────────────────────────────────
+    // ── الحروف والأصوات ──────────────────────────────────────────────────
     {
-      q       : "Which letter comes after 'C' in the alphabet?",
+      q       : "ما هو الحرف الذي يأتي بعد حرف 'C'؟",
       options : ["A", "D", "B", "E"],
       answer  : 1,
       category: "Letters 🔤",
     },
     {
-      q       : "What sound does the letter 'B' make?",
-      options : ["buh", "duh", "puh", "guh"],
-      answer  : 0,
+      q       : "كلمة 'Apple' تبدأ بحرف الـ ...",
+      options : ["B", "C", "A", "D"],
+      answer  : 2,
       category: "Phonics 🔊",
     },
     {
-      q       : "How many letters are in the word 'STAR'?",
-      options : ["3", "5", "4", "6"],
-      answer  : 2,
-      category: "Spelling ✏️",
+      q       : "ما هو شكل حرف الـ 'S' الصغير (Small)؟",
+      options : ["s", "z", "c", "e"],
+      answer  : 0,
+      category: "Letters 🔤",
     },
-    // ── Colors ────────────────────────────────────────────────────────────
+    // ── الألوان ────────────────────────────────────────────────────────────
     {
-      q       : "What color is the sky on a sunny day?",
-      options : ["green", "red", "blue", "yellow"],
-      answer  : 2,
-      category: "Colors 🌈",
-    },
-    {
-      q       : "What color do you get when you mix red and white?",
-      options : ["orange", "purple", "pink", "brown"],
+      q       : "ما معنى لون 'Blue'؟",
+      options : ["أخضر", "أحمر", "أزرق", "أصفر"],
       answer  : 2,
       category: "Colors 🌈",
     },
     {
-      q       : "Which color is a banana?",
-      options : ["blue", "yellow", "green", "red"],
+      q       : "ما هو لون الموز (Banana) بالإنجليزية؟",
+      options : ["Red", "Yellow", "Green", "Blue"],
       answer  : 1,
       category: "Colors 🌈",
     },
-    // ── Animals ───────────────────────────────────────────────────────────
     {
-      q       : "Which animal says 'meow'?",
-      options : ["dog", "cat", "cow", "bird"],
-      answer  : 1,
-      category: "Animals 🐾",
-    },
-    {
-      q       : "Which animal has a very long neck?",
-      options : ["elephant", "lion", "giraffe", "fish"],
-      answer  : 2,
-      category: "Animals 🐾",
-    },
-    {
-      q       : "Which animal lives in the ocean and has fins?",
-      options : ["rabbit", "tiger", "horse", "shark"],
+      q       : "أي من الألوان التالية هو اللون 'Red'؟",
+      options : ["أصفر", "أبيض", "أخضر", "أحمر"],
       answer  : 3,
+      category: "Colors 🌈",
+    },
+    // ── الحيوانات ───────────────────────────────────────────────────────────
+    {
+      q       : "ماذا نطلق على القطة بالإنجليزية؟",
+      options : ["Dog", "Cat", "Cow", "Bird"],
+      answer  : 1,
       category: "Animals 🐾",
     },
-    // ── Numbers ───────────────────────────────────────────────────────────
     {
-      q       : "What number comes after 9?",
-      options : ["8", "11", "10", "7"],
+      q       : "أي حيوان هو الـ 'Lion'؟",
+      options : ["فيل", "أسد", "زرافة", "نمر"],
+      answer  : 1,
+      category: "Animals 🐾",
+    },
+    {
+      q       : "ما معنى كلمة 'Bird'؟",
+      options : ["سمكة", "أرنب", "طائر", "حصان"],
+      answer  : 2,
+      category: "Animals 🐾",
+    },
+    // ── الأرقام ───────────────────────────────────────────────────────────
+    {
+      q       : "ما هو رقم عشرة (10) بالإنجليزية؟",
+      options : ["Eight", "Nine", "Ten", "Seven"],
       answer  : 2,
       category: "Numbers 🔢",
     },
-    // ── Grammar (a / an) ──────────────────────────────────────────────────
     {
-      q       : "Choose the correct article: '___ apple'",
+      q       : "كم عدد أصابع اليد الواحدة؟",
+      options : ["Four", "Six", "Five", "Three"],
+      answer  : 2,
+      category: "Numbers 🔢",
+    },
+    // ── القواعد البسيطة ──────────────────────────────────────────────────
+    {
+      q       : "ماذا نستخدم قبل كلمة 'Apple'؟",
       options : ["a", "an", "the", "some"],
       answer  : 1,
       category: "Grammar 📖",
     },
     {
-      q       : "Choose the correct article: '___ dog'",
+      q       : "ماذا نستخدم قبل كلمة 'Dog'؟",
       options : ["an", "a", "the", "some"],
       answer  : 1,
       category: "Grammar 📖",
     },
-    // ── Self Introduction ─────────────────────────────────────────────────
+    // ── التعريف بالنفس ─────────────────────────────────────────────────
     {
-      q       : "How do you introduce yourself? 'My ___ is Sara.'",
-      options : ["age", "name", "color", "book"],
+      q       : "عندما تسأل شخصاً عن اسمه تقول: What is your ___?",
+      options : ["Age", "Name", "Color", "Book"],
       answer  : 1,
       category: "Self Intro 👋",
     },
     {
-      q       : "How do you say goodbye in English?",
+      q       : "كيف تقول 'مع السلامة' بالإنجليزية؟",
       options : ["Hello", "Please", "Goodbye", "Thank you"],
       answer  : 2,
       category: "Greetings 👋",
     },
-    // ── Family ────────────────────────────────────────────────────────────
+    // ── العائلة والمشاعر ────────────────────────────────────────────────────
     {
-      q       : "What do you call your mother's mother?",
-      options : ["aunt", "sister", "grandmother", "cousin"],
+      q       : "ما معنى كلمة 'Father'؟",
+      options : ["الأم", "الأخت", "الأب", "الجد"],
       answer  : 2,
       category: "Family 👨‍👩‍👧",
     },
-    // ── Feelings ──────────────────────────────────────────────────────────
     {
-      q       : "If someone gives you a gift, you feel ___.",
-      options : ["sad", "angry", "happy", "tired"],
+      q       : "إذا كنت تشعر بالسعادة، فأنت ___.",
+      options : ["Sad", "Angry", "Happy", "Tired"],
       answer  : 2,
       category: "Feelings 😊",
     },
     {
-      q       : "The opposite of 'happy' is ___.",
-      options : ["angry", "sad", "scared", "surprised"],
+      q       : "ما عكس كلمة 'Happy' (سعيد)؟",
+      options : ["Angry", "Sad", "Scared", "Small"],
       answer  : 1,
       category: "Feelings 😊",
     },
-    // ── Basic Verbs ───────────────────────────────────────────────────────
+    // ── الأفعال ───────────────────────────────────────────────────────
     {
-      q       : "Which word means 'to take food into your mouth'?",
-      options : ["sleep", "run", "eat", "read"],
+      q       : "ما معنى فعل 'Eat'؟",
+      options : ["ينام", "يجري", "يأكل", "يقرأ"],
       answer  : 2,
       category: "Verbs 🏃",
     },
     {
-      q       : "I ___ football with my friends.",
-      options : ["sleep", "eat", "play", "drink"],
+      q       : "عندما ألعب بالكرة أستخدم فعل:",
+      options : ["Sleep", "Eat", "Play", "Drink"],
       answer  : 2,
-      category: "Verbs 🏃",
-    },
-    {
-      q       : "Complete: 'I ___ a glass of water every morning.'",
-      options : ["want", "run", "sit", "sleep"],
-      answer  : 0,
       category: "Verbs 🏃",
     },
   ],
 
   adults: [
-    // ── Greetings & Personal Info ──────────────────────────────────────────
+    // ── Greetings & Daily Routine (تأسيس المحادثة) ──────────────────────────
     {
-      q       : "Which sentence is the most formal greeting?",
-      options : ["Hey, what's up?", "Good morning, how do you do?", "Yo! How's it going?", "Hiya!"],
+      q       : "How would you respond to 'Nice to see you'?",
+      options : ["I am fine.", "Nice to see you too.", "Good morning.", "I don't know."],
       answer  : 1,
       category: "Greetings 🤝",
     },
     {
-      q       : "Fill in the blank: 'I ___ from Yemen.'",
-      options : ["am", "is", "are", "be"],
+      q       : "Which question is used to ask about someone's origin?",
+      options : ["Where do you live?", "What is your job?", "Where are you from?", "How are you?"],
+      answer  : 2,
+      category: "Personal Info 🪪",
+    },
+    {
+      q       : "I usually ___ up at 7 o'clock every morning.",
+      options : ["wake", "wakes", "waking", "woke"],
       answer  : 0,
-      category: "Personal Info 🪪",
-    },
-    {
-      q       : "Which question asks about someone's job?",
-      options : ["Where do you live?", "How old are you?", "What do you do for a living?", "What is your nationality?"],
-      answer  : 2,
-      category: "Personal Info 🪪",
-    },
-    // ── Daily Routine & Time ──────────────────────────────────────────────
-    {
-      q       : "What time expression fits? 'I wake up ___ 6 o'clock.'",
-      options : ["in", "on", "at", "by"],
-      answer  : 2,
-      category: "Time ⏰",
-    },
-    {
-      q       : "Which sentence describes a daily routine correctly?",
-      options : [
-        "She going to work every day.",
-        "She goes to work every day.",
-        "She go to work every day.",
-        "She is go to work every day.",
-      ],
-      answer  : 1,
       category: "Daily Routine 📅",
     },
-    // ── Present Simple ────────────────────────────────────────────────────
+    // ── Grammar Base (قواعد تأسيس) ────────────────────────────────────────────────────
     {
-      q       : "Which sentence uses Present Simple correctly?",
+      q       : "Choose the correct sentence:",
       options : [
-        "He play soccer on Fridays.",
-        "He is plays soccer on Fridays.",
-        "He plays soccer on Fridays.",
-        "He playing soccer on Fridays.",
+        "She don't like coffee.",
+        "She doesn't likes coffee.",
+        "She doesn't like coffee.",
+        "She not like coffee.",
       ],
       answer  : 2,
       category: "Present Simple 📗",
     },
     {
-      q       : "Choose the correct negative form: 'She ___ coffee.'",
-      options : ["don't drink", "doesn't drink", "not drink", "isn't drink"],
+      q       : "Jack ___ houses for a living.",
+      options : ["build", "builds", "building", "is build"],
       answer  : 1,
       category: "Present Simple 📗",
     },
-    // ── Present Perfect ───────────────────────────────────────────────────
     {
-      q       : "Choose the correct sentence in Present Perfect:",
-      options : [
-        "I already finish my homework.",
-        "I have already finish my homework.",
-        "I have already finished my homework.",
-        "I already finished my homework.",
-      ],
-      answer  : 2,
-      category: "Present Perfect 🔷",
-    },
-    {
-      q       : "'She has lived here ___ 2015.' Which word completes it?",
-      options : ["for", "since", "ago", "during"],
-      answer  : 1,
-      category: "Present Perfect 🔷",
-    },
-    // ── Present Perfect Continuous ────────────────────────────────────────
-    {
-      q       : "Which sentence is in the Present Perfect Continuous?",
-      options : [
-        "I am studying for three hours.",
-        "I have been studying for three hours.",
-        "I was studying for three hours.",
-        "I had studied for three hours.",
-      ],
+      q       : "I have been studying ___ two hours.",
+      options : ["since", "for", "ago", "at"],
       answer  : 1,
       category: "P.P. Continuous 📘",
     },
-    // ── Past Perfect ──────────────────────────────────────────────────────
+    // ── Intermediate Conversation (المحادثة المكثفة) ───────────────────────────────────
     {
-      q       : "Choose the correct Past Perfect sentence:",
-      options : [
-        "By the time she arrived, he left.",
-        "By the time she arrived, he has left.",
-        "By the time she arrived, he had left.",
-        "By the time she arrived, he was leaving.",
-      ],
-      answer  : 2,
-      category: "Past Perfect 📙",
-    },
-    // ── Tech & AI Vocabulary ──────────────────────────────────────────────
-    {
-      q       : "What does 'Machine Learning' primarily involve?",
-      options : [
-        "Teaching computers to do physical work",
-        "Algorithms that allow computers to learn from data",
-        "Programming machines to follow fixed instructions only",
-        "Connecting machines to the internet",
-      ],
-      answer  : 1,
-      category: "Tech & AI 🤖",
-    },
-    {
-      q       : "The term 'algorithm' in computing refers to:",
-      options : [
-        "A type of computer virus",
-        "A set of step-by-step instructions to solve a problem",
-        "A programming language",
-        "A hardware component",
-      ],
-      answer  : 1,
-      category: "Tech & AI 🤖",
-    },
-    // ── Academic Vocabulary ───────────────────────────────────────────────
-    {
-      q       : "In academic writing, a 'hypothesis' is:",
-      options : [
-        "A proven fact stated in a paper",
-        "A reference to another author's work",
-        "A proposed explanation to be tested",
-        "The conclusion of a research paper",
-      ],
-      answer  : 2,
-      category: "Academic 📚",
-    },
-    {
-      q       : "Choose the most academic phrasing:",
-      options : [
-        "The study is really important.",
-        "The study is significantly relevant to the field.",
-        "The study stuff matters a lot.",
-        "The study is kinda useful.",
-      ],
-      answer  : 1,
-      category: "Academic 📚",
-    },
-    // ── Opinion & Connectors ──────────────────────────────────────────────
-    {
-      q       : "Which expression best introduces an opinion formally?",
-      options : [
-        "I think maybe...",
-        "From my perspective, it could be argued that...",
-        "Personally I totally believe...",
-        "In my head I feel like...",
-      ],
-      answer  : 1,
+      q       : "Which phrase is used to give a personal opinion?",
+      options : ["In my opinion...", "I need to...", "Can you repeat?", "Where is..."],
+      answer  : 0,
       category: "Opinion 💬",
     },
     {
-      q       : "Which connector shows contrast?",
-      options : ["Furthermore", "Therefore", "Nevertheless", "Moreover"],
+      q       : "If you didn't hear someone, you should say:",
+      options : [
+        "I didn't catch that.",
+        "What do you want?",
+        "Go away.",
+        "I don't like that."
+      ],
+      answer  : 0,
+      category: "Conversation 💬",
+    },
+    // ── Advanced Topics (AI & Research) ──────────────────────────────────────────────
+    {
+      q       : "Ahmed recommended a paper about the ___ of modern technology.",
+      options : ["evolution", "food", "colors", "games"],
+      answer  : 0,
+      category: "Tech & AI 🤖",
+    },
+    {
+      q       : "What is a 'Research Paper' in Arabic?",
+      options : ["قصة قصيرة", "ورقة بحثية", "كتاب طبخ", "جريدة"],
+      answer  : 1,
+      category: "Academic 📚",
+    },
+    {
+      q       : "Artificial Intelligence (AI) has a huge ___ on various industries.",
+      options : ["impact", "sound", "color", "taste"],
+      answer  : 0,
+      category: "Tech & AI 🤖",
+    },
+    // ── Grammar Advanced (ملف القواعد) ──────────────────────────────────────────────────
+    {
+      q       : "By the time the movie started, she ___ the book.",
+      options : ["read", "reads", "had read", "reading"],
       answer  : 2,
-      category: "Connectors 🔗",
-    },
-    // ── Advanced Grammar ──────────────────────────────────────────────────
-    {
-      q       : "Identify the correct First Conditional sentence:",
-      options : [
-        "If I would study, I will pass.",
-        "If I study, I will pass.",
-        "If I study, I would pass.",
-        "If I studied, I will pass.",
-      ],
-      answer  : 1,
-      category: "Conditionals 🎯",
+      category: "Past Perfect 📙",
     },
     {
-      q       : "Choose the correct passive voice: 'The report ___ by the team yesterday.'",
-      options : ["is written", "was written", "has been written", "had written"],
-      answer  : 1,
-      category: "Passive Voice 📝",
+      q       : "They ___ a new car last week.",
+      options : ["buy", "buys", "bought", "buying"],
+      answer  : 2,
+      category: "Past Simple 📙",
     },
     {
-      q       : "Which sentence uses the subjunctive mood correctly?",
-      options : [
-        "The teacher suggested that he studies harder.",
-        "The teacher suggested that he study harder.",
-        "The teacher suggested that he studied harder.",
-        "The teacher suggested that he is studying harder.",
-      ],
+      q       : "Which tense describes an action that started in the past and is still continuing?",
+      options : ["Past Simple", "Present Perfect Continuous", "Future Simple", "Past Perfect"],
       answer  : 1,
-      category: "Advanced Grammar ⭐",
+      category: "P.P. Continuous 📘",
+    },
+    // ── General Context (50 Self Intro Questions) ──────────────────────────
+    {
+      q       : "What's the meaning of 'Unique'?",
+      options : ["Something common", "Something special or one of a kind", "Something boring", "Something old"],
+      answer  : 1,
+      category: "Vocabulary 📚",
+    },
+    {
+      q       : "Who is your 'Role Model'?",
+      options : ["A famous place", "A person you admire/follow", "A type of food", "A daily routine"],
+      answer  : 1,
+      category: "Vocabulary 📚",
+    },
+    {
+      q       : "I ___ hang out with my cousins on weekends.",
+      options : ["usually", "is", "am", "be"],
+      answer  : 0,
+      category: "Conversation 💬",
+    },
+    {
+      q       : "What is the meaning of 'Soft and Gentle'?",
+      options : ["قوي وشجاع", "ناعم ولطيف", "سريع وغاضب", "كبير ومرعب"],
+      answer  : 1,
+      category: "Vocabulary 📚",
+    },
+    {
+      q       : "How do you ask about someone's major at university?",
+      options : ["How are you?", "What do you study?", "Where is the lab?", "Do you like food?"],
+      answer  : 1,
+      category: "Academic 📚",
+    },
+    {
+      q       : "I take time to clean my room and ___ relax.",
+      options : ["just", "is", "not", "no"],
+      answer  : 0,
+      category: "Daily Routine 📅",
     },
   ],
 });
-
 // ═══════════════════════════════════════════════════════════════════════════
 //  RESULTS MAPPING  (CEFR A1 → C1)
 // ═══════════════════════════════════════════════════════════════════════════

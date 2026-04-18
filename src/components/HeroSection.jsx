@@ -63,7 +63,7 @@ export default function HeroSection({ onStartTest }) {
         <div className="grid grid-cols-3 gap-4 mb-10 animate-slide-up-delay2">
           {STATS.map((s) => (
             <div key={s.num} className="text-center p-4 rounded-2xl bg-white border border-teal-100 shadow-sm">
-              <p className="text-2xl font-black text-teal-600">{s.num}</p>
+              <p className="text-xl font-black text-teal-600">{s.num}</p>
               <p className="text-xs text-gray-500 mt-0.5">{s.label}</p>
             </div>
           ))}

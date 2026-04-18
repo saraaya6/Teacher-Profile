@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import confetti from "canvas-confetti";
 import { GraduationCap, Sparkles, RefreshCw } from "lucide-react";
-import { getResult }            from "../data/quizData";
+import { getResult } from "../data/quizData";
 import { WaIcon, StarRating, waLink } from "../utils/helpers";
 import ShimmerImage from "./ShimmerImage";
 
@@ -15,19 +15,19 @@ import ShimmerImage from "./ShimmerImage";
  * }} props
  */
 export default function ResultScreen({ user, score, onRestart }) {
-  const result        = getResult(score, user.isKids);
-  const pct           = Math.round((score / 20) * 100);
-  const confettiRan   = useRef(false);
+  const result = getResult(score, user.isKids);
+  const pct = Math.round((score / 20) * 100);
+  const confettiRan = useRef(false);
 
   // Fire confetti exactly once on mount
   useEffect(() => {
     if (confettiRan.current) return;
     confettiRan.current = true;
 
-    const end    = Date.now() + 2800;
+    const end = Date.now() + 2800;
     const colors = ["#0d9488", "#14b8a6", "#f59e0b", "#0ea5e9", "#ffffff"];
-    const frame  = () => {
-      confetti({ particleCount: 4, angle: 60,  spread: 55, origin: { x: 0 }, colors });
+    const frame = () => {
+      confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 }, colors });
       confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1 }, colors });
       if (Date.now() < end) requestAnimationFrame(frame);
     };
@@ -44,7 +44,7 @@ export default function ResultScreen({ user, score, onRestart }) {
   return (
     <div className="quiz-bg min-h-screen flex flex-col items-center justify-center px-4 py-16">
       <div className="max-w-lg w-full animate-slide-up">
-
+        <br />
         {/* Level badge */}
         <div className="text-center mb-6">
           <div
