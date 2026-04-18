@@ -75,6 +75,9 @@ export default function QuizScreen({ user, questions, onFinish, onBack }) {
   return (
     <div className="quiz-bg min-h-screen flex flex-col px-4 py-6">
       {/* Progress bar */}
+      <br />
+      <br />
+      <br />
       <div className="max-w-2xl w-full mx-auto mb-6">
         <div className="flex items-center justify-between mb-3">
           <button
