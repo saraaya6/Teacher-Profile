@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useAnimationFrame, useInView } from "framer-motion";
-import { Star, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { TESTIMONIALS } from "../data/testimonials";
 import ShimmerImage from "./ShimmerImage";
 import { WaIcon, waLink } from "../utils/helpers";
@@ -63,57 +63,22 @@ function MarqueeTrack({ items, initialSpeed = 0.5, reverse = false }) {
 
 /* ─── Individual Card ─── */
 function TestimonialCard({ item }) {
-  if (item.type === "screenshot") {
-    return (
-      <div className="testi-screenshot-card flex-shrink-0">
-        {item.imgSrc ? (
-          <ShimmerImage
-            src={item.imgSrc}
-            alt={item.imgAlt || "تقييم طالب"}
-            className="w-full h-full rounded-3xl"
-            imgClassName="rounded-3xl"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl flex flex-col items-center justify-center gap-3">
-            <WaIcon className="w-10 h-10 text-green-400 opacity-40" />
-            <p className="text-xs text-gray-300 font-medium">WhatsApp Screenshot</p>
-          </div>
-        )}
-      </div>
-    );
-  }
-
   return (
-    <article className="testi-card flex-shrink-0">
-      {/* Avatar + name */}
-      <div className="flex items-center gap-3 mb-3">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-xl flex-shrink-0">
-          {item.emoji}
+    <div className="testi-screenshot-card flex-shrink-0">
+      {item.imgSrc ? (
+        <ShimmerImage
+          src={item.imgSrc}
+          alt={item.imgAlt || "تقييم طالب"}
+          className="w-full h-full rounded-3xl"
+          imgClassName="rounded-3xl"
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl flex flex-col items-center justify-center gap-3">
+          <WaIcon className="w-10 h-10 text-green-400 opacity-40" />
+          <p className="text-xs text-gray-300 font-medium">WhatsApp Screenshot</p>
         </div>
-        <div className="text-right flex-1">
-          <p className="font-bold text-gray-800 text-sm">{item.name}</p>
-          <span className="text-xs text-teal-600 font-bold bg-teal-50 px-2 py-0.5 rounded-full">
-            CEFR {item.level}
-          </span>
-        </div>
-      </div>
-
-      {/* 5 stars */}
-      <div className="flex gap-0.5 mb-3" aria-label="5 out of 5 stars">
-        {[1, 2, 3, 4, 5].map((s) => (
-          <Star key={s} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-        ))}
-      </div>
-
-      {/* Review text */}
-      <p className="text-gray-600 text-sm leading-relaxed text-right">{item.text}</p>
-
-      {/* WhatsApp badge */}
-      <div className="mt-3 flex items-center gap-1 text-green-600">
-        <WaIcon className="w-3 h-3" />
-        <span className="text-xs font-medium">عبر واتساب</span>
-      </div>
-    </article>
+      )}
+    </div>
   );
 }
 
