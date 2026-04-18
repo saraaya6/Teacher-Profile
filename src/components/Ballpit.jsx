@@ -532,7 +532,6 @@ function processPointerInteraction() {
 
 function onTouchStart(e) {
   if (e.touches.length > 0) {
-    e.preventDefault();
     pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
     for (const [elem, data] of pointerMap) {
       const rect = elem.getBoundingClientRect();
@@ -551,7 +550,6 @@ function onTouchStart(e) {
 
 function onTouchMove(e) {
   if (e.touches.length > 0) {
-    e.preventDefault();
     pointerPosition.set(e.touches[0].clientX, e.touches[0].clientY);
     for (const [elem, data] of pointerMap) {
       const rect = elem.getBoundingClientRect();
